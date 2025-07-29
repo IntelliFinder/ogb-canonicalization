@@ -240,7 +240,7 @@ def oap_positional_encoding(g, pos_enc_dim, use_unique_sign=True, use_unique_bas
     
     #wrapper = torch.zeros((pos_enc_dim), dtype=torch.double, device=U.device)
     #wrapper[-single_ind.size(0):] = eigvals_single
-    g.ndata['pos_enc'] = pos_single[:, -k:]  # last k non-trivial eigenvectors
+    g.ndata['pos_enc'] = U[:, -k:]  # last k non-trivial eigenvectors
     #g.ndata['eig_val'] = eigvals_single[-k:].repeat(n, 1) #last k non-trivial eigenvalues
     #add hidden state faetures
     #temp_zeros = torch.zeros(len(g.ndata['feat']), 1 + in_dim)
