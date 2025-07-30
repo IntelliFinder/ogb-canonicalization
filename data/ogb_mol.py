@@ -156,7 +156,7 @@ def oap_positional_encoding(g, pos_enc_dim, use_unique_sign=True, use_unique_bas
     E, U = E.round(decimals=14)[:-1], U[:, :-1]
 
         
-    in_dim = 68
+    in_dim = 16
     dim = min(n - 1, k)
     _, mult = torch.unique(E[-dim:], return_counts=True)
     ind = torch.cat([torch.LongTensor([0]), torch.cumsum(mult, dim=0)]) + max(n - 1 - k, 0)
